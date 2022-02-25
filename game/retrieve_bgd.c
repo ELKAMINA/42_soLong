@@ -3,7 +3,7 @@
 void    get_background(t_frame *frame, t_soLong *game)
 {
     get_mlx_win(frame, game);
-    get_image(frame, game);
+    get_game_base(game);
 }
 
 void    get_mlx_win(t_frame *frame, t_soLong *game)
@@ -25,24 +25,24 @@ void get_width_height(t_frame *myframe, t_soLong *game)
     //printf("height = %d --- width = %d\n", hei_g, wi_g);
 }
 
-void    get_image(t_frame *frame, t_soLong *game)
+void    get_game_base(t_soLong *game)
 {
 // MALLOC STRUCT ???????   
     //my_mlx_put_pixel(&img, 5, 5, 0x00FF0000);
     //printf("Test");
-    get_colored_square(frame, game);
+    get_ze_game(game);
 
 }
 
 // MALLOC STRUCT ???????
-void init_struct_imgData(t_img_data *img)
-{
-    img->img = 0;
-    img->bits_per_pixel = 0;
-	img->line_length = 0;
-	img->endian = 0;
-    img->rpath = "../images/wall.xpm";
-	img->img_width = 0;;
-	img->img_height = 0;
-    img->addr = NULL;
-}
+// void init_struct_imgData(t_img_data *img)
+// {
+//     img->img = 0;
+//     img->bits_per_pixel = 0;
+// 	img->line_length = 0;
+// 	img->endian = 0;
+//     img->rpath = "";
+// 	img->img_width = 0;;
+// 	img->img_height = 0;
+//     img->addr = NULL;
+// }

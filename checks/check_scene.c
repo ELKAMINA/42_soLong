@@ -8,14 +8,13 @@ void    count_initials(t_soLong *game)
   i = 0;
   while (game->scene[i])
   {
-      j = 0;
-      while (game->scene[i][j])
-      {
-          increment(game, game->scene[i][j]);
-          //printf("P = %d --  V= %d -- W = %d -- C = %d -- E= %d\n", game->p, game->v, game->w, game->c, game->e);
-          j++;
-      }
-      i++;
+        j = 0;
+        while (game->scene[i][j])
+        {
+            increment(game, game->scene[i][j]);
+            j++;
+        }
+        i++;
   }
     check_validity(game);
     check_walls(game);

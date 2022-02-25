@@ -22,7 +22,7 @@ void my_mlx_put_pixel(t_data *data, int x, int y, int color)
     dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
     *(unsigned int*)dst = color;
 }
-void square (t_data *img)
+void put_images (t_data *img)
 {
     int x;
     int y;
@@ -56,7 +56,7 @@ int main()
     img.img = mlx_new_image(mlx, 1920, 1080);
     img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length, &img.endian);
     my_mlx_put_pixel(&img, 5, 5, 0x00FF0000);
-    square(&img);
+    put_images(&img);
     mlx_put_image_to_window(mlx, win, img.img, 0, 0);
     // on peut avoir deux fenetres qui appellent notre mlx
 

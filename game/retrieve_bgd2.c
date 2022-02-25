@@ -1,65 +1,58 @@
 #include "../so_long.h"
 
-void my_mlx_put_pixel(t_img_data *img, int x, int y, int color)
-{
-    char    *dst;
+// void my_mlx_put_pixel(t_img_data *img, int x, int y, int color)
+// {
+//     char    *dst;
 
-    dst = img->addr + (y * img->line_length + x * (img->bits_per_pixel / 8));
-    *(unsigned int*)dst = color;
+//     dst = img->addr + (y * img->line_length + x * (img->bits_per_pixel / 8));
+//     *(unsigned int*)dst = color;
+// }
+
+void init_decor(t_soLong *game, t_frame *frame)
+{
+    ////ATTENTION, proteger joueurs en cas de changement de chemins dacces
+    game->floor = mlx_xpm_file_to_image(frame->mlx, FLOOR, &game->img_width, &game->img_height);
+    game->wall = mlx_xpm_file_to_image(frame->mlx, WALL, &game->img_width, &game->img_height);
+    game->coll = mlx_xpm_file_to_image(frame->mlx, COLL, &game->img_width, &game->img_height);
+    game->exit = mlx_xpm_file_to_image(frame->mlx, EXIT, &game->img_width, &game->img_height);
+    game->player = mlx_xpm_file_to_image(frame->mlx, PLAYER, &game->img_width, &game->img_height);
 }
 
-void square (t_img_data *img, int i, int j)
+void put_images(t_soLong *game, void *img, int x, int y)
 {
-    int x;
-    int n_i;
-    //int n_j;
-    int y;
-
-    x = 0;
-    y = 0;
-    n_i = i;
-    //n_j = j;
-    // printf("Test1");
-    while (y < 64)
-    {
-        x = 0;
-        i = n_i;
-        while (x < 64)
-        {
-            my_mlx_put_pixel(img, i, j, 0x00FF0000);
-            i++;
-            x++;
-        }
-        y++;
-        j++;
-    }
+    mlx_put_image_to_window(game->frame->mlx, game->frame->win, img, (x * IMG_SIZE), (y * IMG_SIZE));    
 }
 
-void    get_colored_square(t_frame *frame, t_soLong *game)
+void get_the_right_image(char c, t_soLong *game, int i, int j)
 {
-    t_img_data img;
-    int i;
-    int j;
+    if (c == '1')
+        put_images(game, game->wall, i, j);
+    if (c == '0')
+        put_images(game, game->floor, i, j);
+    if (c == 'E')
+        put_images(game, game->exit, i, j);
+    if (c == 'C')
+        put_images(game, game->coll, i, j);
+    if (c == 'P')
+        put_images(game, game->player, i, j);
+}
+
+void    get_ze_game(t_soLong *game)
+{
+    int         i;
+    int         j;
 
     i = 0;
-    //printf("Test");
-    init_struct_imgData(&img);
-    img.img = mlx_new_image(frame->mlx, frame->win_w, frame->win_h);
-    img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length, &img.endian);
-    // mi_mlx_put_pixel(&img, 5, 5, 0x00FF0000);
-    //img.img = mlx_xpm_file_to_image(frame->mlx, img.rpath, img.img_width, img.img_height);
     while (game->scene[i])
     {
         j = 0;
         while (game->scene[i][j])
         {
-            square(&img, (j * 64), (i * 64));
+            get_the_right_image(game->scene[i][j], game, i, j);
             j++;
         }
         i++;
     }
     //game
     //exit
-    mlx_put_image_to_window(frame->mlx, frame->win, img.img, 0, 0);
-    mlx_loop(frame->mlx);
 }
