@@ -1,5 +1,10 @@
 #include "../so_long.h"
 
+void    verif_scene(t_soLong *game)
+{
+    count_initials(game);
+}
+
 void    count_initials(t_soLong *game)
 {
   int   i;

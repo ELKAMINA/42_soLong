@@ -1,4 +1,4 @@
-#include "../so_long.h"
+#include "../../so_long.h"
 
 void    get_background(t_soLong *game)
 {
@@ -10,7 +10,7 @@ void    get_mlx_win(t_soLong *game)
 {
     game->frame->mlx = mlx_init();
     get_width_height(game);
-    game->frame->win = mlx_new_window(game->frame->mlx, game->frame->win_w, game->frame->win_h, "Hello World");
+    game->frame->win = mlx_new_window(game->frame->mlx, game->frame->win_w, game->frame->win_h, "Wimbledon");
 }
 
 void get_width_height(t_soLong *game)

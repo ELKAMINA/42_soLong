@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   so_long.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ael-khat <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/26 11:48:49 by ael-khat          #+#    #+#             */
+/*   Updated: 2022/02/26 11:50:24 by ael-khat         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
@@ -22,10 +34,10 @@
 //Main struct
 typedef struct s_frame
 {
-    void *mlx;
-    void *win;
-    int   win_w;
-    int   win_h;
+	void *mlx;
+	void *win;
+	int   win_w;
+	int   win_h;
 }   t_frame;
 
 typedef struct s_soLong
@@ -46,44 +58,57 @@ typedef struct s_soLong
 	t_frame *frame;
 }   t_soLong;
 
+// Keyboard Codes
+# define ESC 65307
+# define UP 65362
+# define DOWN 65364
+# define LEFT 65361
+# define RIGHT 65363
+
 
 // Check params and get map
-int        check_create(int argc, char *argv[]);
-int        check_name_arg(char *argv[]);
-int        check_file(char *argv);
-char	   **get_stage(int fd);
-void	    init_struct_game(t_soLong *game, int fd);
+int		check_create(int argc, char *argv[]);
+int		check_name_arg(char *argv[]);
+int		check_file(char *argv);
+char	**get_stage(int fd);
+void	init_struct_game(t_soLong *game, int fd);
 
 // Check map validity
-void    verif_scene(t_soLong *game);
-void    count_initials(t_soLong *game);
-void    increment(t_soLong *game, char c);
-void    check_validity(t_soLong *game);
-void    check_walls(t_soLong *game);
-int     check_square(t_soLong *game);
-void    check_fence(t_soLong *game);
-void    check_first_last_line(t_soLong *game, char *lineOne);
-void    check_intermediate_lines(t_soLong *game, char *lineOne);
+void	verif_scene(t_soLong *game);
+void	count_initials(t_soLong *game);
+void	increment(t_soLong *game, char c);
+void	check_validity(t_soLong *game);
+void	check_walls(t_soLong *game);
+int		check_square(t_soLong *game);
+void	check_fence(t_soLong *game);
+void	check_first_last_line(t_soLong *game, char *lineOne);
+void	check_intermediate_lines(t_soLong *game, char *lineOne);
 
 // Free when parsing 
-void    freeing(char    **game);
+void	freeing(char    **game);
 
-// Drawing
+// Init everyhting and get decor
 void	init_struct_frame(t_soLong *game);
-void    get_width_height(t_soLong *game);
-void    get_background(t_soLong *game);
-void    get_mlx_win(t_soLong *game);
-void    get_game_base(t_soLong *game);
+void	get_width_height(t_soLong *game);
+void	get_background(t_soLong *game);
+void	get_mlx_win(t_soLong *game);
+void	get_game_base(t_soLong *game);
 void 	init_decor(t_soLong *game);
 void 	put_images(t_soLong *game, void *img, int x, int y);
 void 	get_the_right_image(char c, t_soLong *game, int i, int j);
-void    get_ze_game(t_soLong *game);
+void	get_ze_game(t_soLong *game);
 
+//Window Management 
+void win_management(t_soLong *game);
+int	 keypress(int keycode, t_soLong *game);
 
 // External functions
-int	        ft_strrchr(const char *s, int c);
-int	        ft_strnstr(const char *haystack, const char *needle, size_t len);
-char	    **ft_split(char const *s, char c);
+int		ft_strrchr(const char *s, int c);
+int		ft_strnstr(const char *haystack, const char *needle, size_t len);
+char	**ft_split(char const *s, char c);
 
+//Cleaning when quiting game
+int	destroy_all_images(t_soLong *game);
+int	destroy_base(t_soLong *game);
 
 #endif
