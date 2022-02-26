@@ -8,19 +8,19 @@
 //     *(unsigned int*)dst = color;
 // }
 
-void init_decor(t_soLong *game, t_frame *frame)
+void init_decor(t_soLong *game)
 {
     ////ATTENTION, proteger joueurs en cas de changement de chemins dacces
-    game->floor = mlx_xpm_file_to_image(frame->mlx, FLOOR, &game->img_width, &game->img_height);
-    game->wall = mlx_xpm_file_to_image(frame->mlx, WALL, &game->img_width, &game->img_height);
-    game->coll = mlx_xpm_file_to_image(frame->mlx, COLL, &game->img_width, &game->img_height);
-    game->exit = mlx_xpm_file_to_image(frame->mlx, EXIT, &game->img_width, &game->img_height);
-    game->player = mlx_xpm_file_to_image(frame->mlx, PLAYER, &game->img_width, &game->img_height);
+    game->floor = mlx_xpm_file_to_image(game->frame->mlx, FLOOR, &game->img_width, &game->img_height);
+    game->wall = mlx_xpm_file_to_image(game->frame->mlx, WALL, &game->img_width, &game->img_height);
+    game->coll = mlx_xpm_file_to_image(game->frame->mlx, COLL, &game->img_width, &game->img_height);
+    game->exit = mlx_xpm_file_to_image(game->frame->mlx, EXIT, &game->img_width, &game->img_height);
+    game->player = mlx_xpm_file_to_image(game->frame->mlx, PLAYER, &game->img_width, &game->img_height);
 }
 
 void put_images(t_soLong *game, void *img, int x, int y)
 {
-    mlx_put_image_to_window(game->frame->mlx, game->frame->win, img, (x * IMG_SIZE), (y * IMG_SIZE));    
+    mlx_put_image_to_window(game->frame->mlx, game->frame->win, img, (y * IMG_SIZE), (x * IMG_SIZE));    
 }
 
 void get_the_right_image(char c, t_soLong *game, int i, int j)
@@ -43,6 +43,7 @@ void    get_ze_game(t_soLong *game)
     int         j;
 
     i = 0;
+    init_decor(game);
     while (game->scene[i])
     {
         j = 0;
@@ -55,4 +56,5 @@ void    get_ze_game(t_soLong *game)
     }
     //game
     //exit
+    mlx_loop(game->frame->mlx);
 }
