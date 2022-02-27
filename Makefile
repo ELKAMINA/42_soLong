@@ -11,11 +11,12 @@ SRC =  main.c\
 		./checks/check_scene.c \
 		./checks/check_scene2.c \
 		./game/initialisations/initialisations.c \
+		./game/initialisations/initialisations2.c \
 		./freeing/to_free.c \
 		./freeing/cleaning.c \
 		./game/getting_bgd/retrieve_bgd.c \
 		./game/getting_bgd/retrieve_bgd2.c \
-		./graphical_mngt/window_mngt.c \
+		./game/graphical_mngt/window_mngt.c \
 		./gnl/get_next_line.c \
 		./gnl/get_next_line_utils.c \
 

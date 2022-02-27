@@ -2,16 +2,17 @@
 
 int	destroy_base(t_soLong *game)
 {
-	if (game->floor != NULL)
-		mlx_destroy_image(game->frame->mlx, game->floor);
-  if (game->wall != NULL)
-		mlx_destroy_image(game->frame->mlx, game->wall);
-  if (game->exit != NULL)
-    mlx_destroy_image(game->frame->mlx, game->exit);
-  if (game->player != NULL)
-    mlx_destroy_image(game->frame->mlx, game->player);
-  if (game->coll != NULL)
-    mlx_destroy_image(game->frame->mlx, game->coll);
+  printf("%p\n", game->floor->img);
+	if (game->floor->img != NULL)
+		mlx_destroy_image(game->frame->mlx, game->floor->img);
+  if (game->wall->img != NULL)
+		mlx_destroy_image(game->frame->mlx, game->wall->img);
+  if (game->exit->img != NULL)
+    mlx_destroy_image(game->frame->mlx, game->exit->img);
+  if (game->player->img != NULL)
+    mlx_destroy_image(game->frame->mlx, game->player->img);
+  if (game->coll->img != NULL)
+    mlx_destroy_image(game->frame->mlx, game->coll->img);
 	return (0);
 }
 

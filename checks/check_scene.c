@@ -28,20 +28,20 @@ void    count_initials(t_soLong *game)
 void increment(t_soLong *game, char c)
 {
     if (c == 'P')
-        game->p += 1;
+        game->player->total_nb += 1;
     if (c == '0')
-        game->v += 1;
+        game->floor->total_nb += 1;
     if (c == '1')
-        game->w += 1;
+        game->wall->total_nb += 1;
     if (c == 'C')
-        game->c += 1;
+        game->coll->total_nb += 1;
     if (c == 'E')
-        game->e += 1;
+        game->exit->total_nb += 1;
 }
 
 void check_validity(t_soLong *game)
 {
-    if (game->e < 1 || game->c < 1 || game->p < 1)
+    if (game->exit->total_nb < 1 || game->coll->total_nb < 1 || game->player->total_nb < 1)
     {
         write(1, "Error\n", 7);
         write(1, "At least 1 item, 1 collectible, 1 exit\n", 40);

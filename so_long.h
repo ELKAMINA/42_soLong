@@ -32,6 +32,28 @@
 # define IMG_SIZE	80
 
 //Main struct
+
+typedef struct s_img
+{
+	void	*img;
+	char	*addr;
+	int		bits_per_pixel;
+	int		line_lenght;
+	int		endian;
+	int		width;
+	int		height;
+	int		ratio;
+} t_img;
+
+typedef struct s_thing
+{
+	int	pos_x;
+	int	pos_y;
+	int	total_nb;
+	t_img *img;
+} t_thing;
+
+
 typedef struct s_frame
 {
 	void *mlx;
@@ -40,23 +62,20 @@ typedef struct s_frame
 	int   win_h;
 }   t_frame;
 
+
 typedef struct s_soLong
 {
 	char	**scene;
-	void	*floor;
-	void	*wall;
-	void 	*coll;
-	void	*player;
-	void	*exit;
-	int	  	img_width;
-	int	  	img_height;
-	int		p;
-	int		w;
-	int		v;
-	int		e;
-	int		c;
 	t_frame *frame;
-}   t_soLong;
+	t_thing	*player;
+	t_thing	*wall;
+	t_thing	*floor;
+	t_thing	*coll;
+	t_thing	*exit;
+}		   t_soLong;
+
+
+
 
 // Keyboard Codes
 # define ESC 65307
@@ -89,6 +108,13 @@ void	freeing(char    **game);
 
 // Init everyhting and get decor
 void	init_struct_frame(t_soLong *game);
+void	init_player(t_soLong *game);
+void	init_coll(t_soLong *game);
+void	init_exit(t_soLong *game);
+void	init_wall(t_soLong *game);
+void	init_floor(t_soLong *game);
+void	init_struct_thing(t_soLong *game);
+void	init_struct_img(t_soLong *game);
 void	get_width_height(t_soLong *game);
 void	get_background(t_soLong *game);
 void	get_mlx_win(t_soLong *game);
@@ -99,7 +125,7 @@ void 	get_the_right_image(char c, t_soLong *game, int i, int j);
 void	get_ze_game(t_soLong *game);
 
 //Window Management 
-void win_management(t_soLong *game);
+void playing(t_soLong *game);
 int	 keypress(int keycode, t_soLong *game);
 
 // External functions
@@ -110,5 +136,11 @@ char	**ft_split(char const *s, char c);
 //Cleaning when quiting game
 int	destroy_all_images(t_soLong *game);
 int	destroy_base(t_soLong *game);
+
+//Playing
+void 	quit_game(t_soLong *game);
+void	init_struct_pos(t_soLong *game);
+void 	get_pos(t_soLong *game);
+
 
 #endif
