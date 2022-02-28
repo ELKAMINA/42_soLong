@@ -1,6 +1,6 @@
 #include "../../so_long.h"
 
-void quit_game(t_soLong *game)
+int quit_game(t_soLong *game)
 {
     write(1, "Goodbye!", 7);
     //freeing(game->scene);
@@ -14,6 +14,7 @@ void quit_game(t_soLong *game)
     //free(game->frame->mlx);
     freeing(game->scene);
     exit(1);
+    return (1);
     //free(game->frame->mlx);
 }
 
@@ -84,5 +85,5 @@ int	keypress(int keycode, t_soLong *game)
 void playing(t_soLong *game)
 {
     mlx_hook(game->frame->win, 2, 1L<<0, keypress, game);
-    //mlx_hook(game->frame->win, 4, 1L<<2, quit_game, game);
+    mlx_hook(game->frame->win, 33, 1L << 5, quit_game, game);
 }

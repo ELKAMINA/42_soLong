@@ -144,7 +144,7 @@ int		destroy_all_images(t_soLong *game);
 int		destroy_base(t_soLong *game);
 
 //Playing
-void 	quit_game(t_soLong *game);
+int 	quit_game(t_soLong *game);
 void	init_struct_pos(t_soLong *game);
 void 	get_pos(t_soLong *game);
 void 	move_r(t_soLong *game, int x, int y);
