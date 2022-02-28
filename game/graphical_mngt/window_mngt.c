@@ -61,18 +61,21 @@ void    get_new_scene(t_soLong *game, int x, int y, int co)
 
 int	keypress(int keycode, t_soLong *game)
 {
-    printf("KEYCODE = %d\n", keycode);
     if (keycode == ESC)
         quit_game(game);
     if (keycode == RIGHT)
         moving_forward(game);
     if (keycode == LEFT)
         moving_backward(game);
-    else
-    {
-        write(1, "NOOOOOOTHINGS HAPPENING\n", 25);
-        return (0);
-    }
+    if (keycode == UP)
+        moving_up(game);
+    if (keycode == DOWN)
+        moving_down(game);
+    // else
+    // {
+    //     write(1, "NOOOOOOTHINGS HAPPENING\n", 25);
+    //     return (0);
+    // }
     return (1);
 }
 

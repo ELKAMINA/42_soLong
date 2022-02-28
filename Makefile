@@ -13,6 +13,8 @@ SRC =  main.c\
 		./game/initialisations/initialisations.c \
 		./game/initialisations/initialisations2.c \
 		./game/moving/moving_r_l.c \
+		./game/moving/moving_up.c \
+		./game/moving/moving_down.c \
 		./freeing/to_free.c \
 		./freeing/cleaning.c \
 		./game/getting_bgd/retrieve_bgd.c \

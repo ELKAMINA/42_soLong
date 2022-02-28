@@ -151,6 +151,10 @@ void 	move_l(t_soLong *game, int x, int y);
 void    get_new_scene(t_soLong *game, int x, int y, int coll);
 void 	moving_backward(t_soLong *game);
 void 	moving_forward(t_soLong *game);
+void 	moving_up(t_soLong *game);
+void 	move_u(t_soLong *game, int x, int y);
+void 	moving_down(t_soLong *game);
+void 	move_d(t_soLong *game, int x, int y);
 
 
 #endif
