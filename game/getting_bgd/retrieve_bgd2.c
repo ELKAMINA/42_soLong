@@ -5,9 +5,9 @@ void init_decor(t_soLong *game)
     ////ATTENTION, proteger joueurs en cas de changement de chemins dacces
     game->player->img->img = mlx_xpm_file_to_image(game->frame->mlx, PLAYER, &(game->player->img->width), &(game->player->img->height));
     game->wall->img->img = mlx_xpm_file_to_image(game->frame->mlx, WALL, &(game->wall->img->width), &(game->wall->img->height));
-    // game->coll->img->img = mlx_xpm_file_to_image(game->frame->mlx, COLL, &(game->coll->img->width), &(game->coll->img->height));
-    // game->exit->img->img = mlx_xpm_file_to_image(game->frame->mlx, EXIT, &game->exit->img->width, &game->exit->img->height);
-    // game->floor->img->img = mlx_xpm_file_to_image(game->frame->mlx, FLOOR, &game->floor->img->width, &game->floor->img->height);
+    game->coll->img->img = mlx_xpm_file_to_image(game->frame->mlx, COLL, &(game->coll->img->width), &(game->coll->img->height));
+    game->exit->img->img = mlx_xpm_file_to_image(game->frame->mlx, EXIT, &game->exit->img->width, &game->exit->img->height);
+    game->floor->img->img = mlx_xpm_file_to_image(game->frame->mlx, FLOOR, &game->floor->img->width, &game->floor->img->height);
 }
 
 void put_images(t_soLong *game, void *img, int x, int y)
@@ -31,24 +31,24 @@ void get_the_right_image(char c, t_soLong *game, int i, int j)
 
 void    get_ze_game(t_soLong *game)
 {
-    // int         i;
-    // int         j;
+    int         i;
+    int         j;
 
-    // i = 0;
+    i = 0;
     printf("%s\n", game->scene[0]);
     init_decor(game);
-    // while (game->scene[i])
-    // {
-    //     j = 0;
-    //     while (game->scene[i][j])
-    //     {
-    //         get_the_right_image(game->scene[i][j], game, i, j);
-    //         j++;
-    //     }
-    //     i++;
-    // }
-    // //game
-    // //exit
-    // playing(game);
+    while (game->scene[i])
+    {
+        j = 0;
+        while (game->scene[i][j])
+        {
+            get_the_right_image(game->scene[i][j], game, i, j);
+            j++;
+        }
+        i++;
+    }
+    //game
+    //exit
+    playing(game);
     mlx_loop(game->frame->mlx);
 }

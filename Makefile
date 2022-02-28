@@ -1,4 +1,4 @@
-CC = gcc -Wall -Werror -Wextra -g
+CC = gcc -Wall -Werror -Wextra -g -fsanitize=address
 
 NAME = so_long
 

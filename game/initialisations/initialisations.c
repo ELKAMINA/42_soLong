@@ -9,9 +9,8 @@ void	init_struct_game(t_soLong *game, int fd)
 
 void	init_struct_frame(t_soLong *game)
 {
-	t_frame		frametest;
-
-	game->frame = &frametest;
+	// A FREE
+	game->frame = malloc(sizeof(t_frame));
 	game->frame->mlx = 0;
 	game->frame->win = 0;
 	game->frame->win_w = 0;
@@ -20,17 +19,12 @@ void	init_struct_frame(t_soLong *game)
 
 void	init_struct_img(t_soLong *game)
 {
-	t_img		imagep;
-	t_img		imagec;
-	t_img		imagew;
-	t_img		imagee;
-	t_img		imagef;
-
-	game->player->img = &imagep;
-	game->floor->img = &imagef;
-	game->wall->img = &imagew;
-	game->exit->img = &imagee;
-	game->coll->img = &imagec;
+	// A FREE
+	game->player->img = malloc(sizeof(t_img));
+	game->wall->img = malloc(sizeof(t_img));
+	game->coll->img = malloc(sizeof(t_img));
+	game->exit->img = malloc(sizeof(t_img));
+	game->floor->img = malloc(sizeof(t_img));
 	init_player(game);
 	init_wall(game);
 	init_coll(game);
@@ -41,17 +35,12 @@ void	init_struct_img(t_soLong *game)
 
 void	init_struct_thing(t_soLong *game)
 {
-	t_thing		players;
-	t_thing		floors;
-	t_thing		walls;
-	t_thing		exits;
-	t_thing		colls;
-	
-	game->player = &players;
-	game->floor = &floors;
-	game->wall = &walls;
-	game->coll = &colls;
-	game->exit = &exits;
+	// A FREE
+	game->player = malloc(sizeof(t_thing));
+	game->wall = malloc(sizeof(t_thing));
+	game->coll = malloc(sizeof(t_thing));
+	game->exit = malloc(sizeof(t_thing));
+	game->floor = malloc(sizeof(t_thing));
 	game->player->pos_x = 0;
 	game->player->pos_y = 0;
 	game->player->total_nb = 0;

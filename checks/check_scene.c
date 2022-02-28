@@ -14,6 +14,7 @@ void    count_initials(t_soLong *game)
   while (game->scene[i])
   {
         j = 0;
+        printf("string = %s i = %d\n", game->scene[i], i);
         while (game->scene[i][j])
         {
             increment(game, game->scene[i][j]);
