@@ -35,7 +35,6 @@ void    get_ze_game(t_soLong *game)
     int         j;
 
     i = 0;
-    printf("%s\n", game->scene[0]);
     init_decor(game);
     while (game->scene[i])
     {
@@ -47,6 +46,7 @@ void    get_ze_game(t_soLong *game)
         }
         i++;
     }
+    //printf("JE SUIS A LA FIN -----------%s\n", game->scene[4]);
     //game
     //exit
     playing(game);

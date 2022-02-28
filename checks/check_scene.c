@@ -9,15 +9,17 @@ void    count_initials(t_soLong *game)
 {
   int   i;
   int   j;
+  t_soLong *game_c;
 
   i = 0;
-  while (game->scene[i])
+  game_c = game;
+  while (game_c->scene[i])
   {
         j = 0;
-        printf("string = %s i = %d\n", game->scene[i], i);
-        while (game->scene[i][j])
+        //printf("%s\n", game_c->scene[i]);
+        while (game_c->scene[i][j])
         {
-            increment(game, game->scene[i][j]);
+            increment(game_c, game_c->scene[i][j]);
             j++;
         }
         i++;

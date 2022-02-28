@@ -44,17 +44,27 @@ void	init_struct_thing(t_soLong *game)
 	game->player->pos_x = 0;
 	game->player->pos_y = 0;
 	game->player->total_nb = 0;
+	game->player->total_moves = 0;
+	game->player->nb_of_coll = 0;
 	game->floor->pos_x = 0;
 	game->floor->pos_y = 0;
 	game->floor->total_nb = 0;
+	game->floor->total_moves = 0;
+	game->floor->nb_of_coll = 0;
 	game->exit->pos_x = 0;
 	game->exit->pos_y = 0;
 	game->exit->total_nb = 0;
+	game->exit->total_moves = 0;
+	game->exit->nb_of_coll = 0;
 	game->coll->pos_x = 0;
 	game->coll->pos_y = 0;
 	game->coll->total_nb = 0;
+	game->coll->total_moves = 0;
+	game->coll->nb_of_coll = 0;
 	game->wall->pos_x = 0;
 	game->wall->pos_y = 0;
 	game->wall->total_nb = 0;
+	game->wall->total_moves = 0;
+	game->wall->nb_of_coll = 0;
 	init_struct_img(game);
 }
