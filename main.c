@@ -10,7 +10,7 @@ int	main(int argc, char *argv[])
 		return (0);
 	init_struct_game(&game, fd);
 	// init structs
-	//printf("%s\n", game.scene[1]);
+	//ft_printf("%s\n", game.scene[1]);
 	// Load game
 	verif_scene(&game);
 	get_background(&game);

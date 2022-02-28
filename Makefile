@@ -22,6 +22,11 @@ SRC =  main.c\
 		./game/graphical_mngt/window_mngt.c \
 		./gnl/get_next_line.c \
 		./gnl/get_next_line_utils.c \
+		./ft_printf/ft_printf.c \
+		./ft_printf/ft_putchar_counting.c \
+		./ft_printf/ft_putnbr_base.c \
+		./ft_printf/ft_putnbr_counting.c \
+		./ft_printf/ft_putstr_counting.c \
 
 OBJ = $(SRC:.c=.o)
 

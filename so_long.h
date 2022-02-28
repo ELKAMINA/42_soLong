@@ -19,6 +19,7 @@
 # include <fcntl.h>
 # include <stdlib.h>
 # include "./gnl/get_next_line.h"
+# include "./ft_printf/ft_printf.h"
 # include "minilibx/include/mlx.h"
 
 // Chemin d'acces aux images

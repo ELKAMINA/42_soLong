@@ -26,7 +26,7 @@ void get_pos(t_soLong *game)
     while (game->scene[i])
     {
         j = 0;
-        //printf("%c\n", game->scene[i][j]);
+        //ft_printf("%c\n", game->scene[i][j]);
         while (game->scene[i][j])
         {
             if (game->scene[i][j] == 'P')
@@ -43,13 +43,13 @@ void get_pos(t_soLong *game)
 
 void    get_new_scene(t_soLong *game, int x, int y, int co)
 {
-    printf("get new scene 1 = %d %d\n", x, y);
-    printf("get caracteres = %s\n", game->scene[y]);
+    ft_printf("get new scene 1 = %d %d\n", x, y);
+    ft_printf("get caracteres = %s\n", game->scene[y]);
     game->scene[y][x] = '0';
     //get_pos(game);
     game->player->total_moves++;
     mlx_destroy_image(game->frame->mlx, game->player->img->img);
-    printf("get new scene 2 = %s\n", game->scene[2]);
+    ft_printf("get new scene 2 = %s\n", game->scene[2]);
     //game->player->img->img = mlx_xpm_file_to_image(game->frame->mlx, PLAYERR, &(game->player->img->width), &(game->player->img->height));
     //mlx_put_image_to_window(game->frame->mlx, game->frame->win, game->player->img->img, game->player->pos_x, game->player->pos_y);
     if (co == 1)
@@ -61,15 +61,16 @@ void    get_new_scene(t_soLong *game, int x, int y, int co)
 
 int	keypress(int keycode, t_soLong *game)
 {
+    ft_printf("KEYCODE == %d\n", keycode);
     if (keycode == ESC)
         quit_game(game);
-    if (keycode == RIGHT)
+    if (keycode == RIGHT || keycode == 100)
         moving_forward(game);
-    if (keycode == LEFT)
+    if (keycode == LEFT || keycode == 115)
         moving_backward(game);
-    if (keycode == UP)
+    if (keycode == UP || keycode == 119)
         moving_up(game);
-    if (keycode == DOWN)
+    if (keycode == DOWN || keycode == 97)
         moving_down(game);
     // else
     // {
