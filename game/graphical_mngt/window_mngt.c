@@ -48,6 +48,7 @@ void    get_new_scene(t_soLong *game, int x, int y, int co)
     game->scene[y][x] = '0';
     //get_pos(game);
     game->player->total_moves++;
+    ft_printf("Player's movement == %d\n", game->player->total_moves);
     mlx_destroy_image(game->frame->mlx, game->player->img->img);
     ft_printf("get new scene 2 = %s\n", game->scene[2]);
     //game->player->img->img = mlx_xpm_file_to_image(game->frame->mlx, PLAYERR, &(game->player->img->width), &(game->player->img->height));
