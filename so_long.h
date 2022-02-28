@@ -146,9 +146,11 @@ int		destroy_base(t_soLong *game);
 void 	quit_game(t_soLong *game);
 void	init_struct_pos(t_soLong *game);
 void 	get_pos(t_soLong *game);
-void 	move(t_soLong *game, int x, int y);
+void 	move_r(t_soLong *game, int x, int y);
+void 	move_l(t_soLong *game, int x, int y);
 void    get_new_scene(t_soLong *game, int x, int y, int coll);
-
+void 	moving_backward(t_soLong *game);
+void 	moving_forward(t_soLong *game);
 
 
 #endif
