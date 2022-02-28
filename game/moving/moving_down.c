@@ -30,9 +30,14 @@ void move_d(t_soLong *game, int x, int y)
     else if (game->scene[y + 1][x] == 'E')
     {
         if (game->player->nb_of_coll == game->coll->total_nb)
-            printf("CONGRATULATIONS! YOU WON");
+        {
+            game->scene[y + 1][x] = 'P';
+            //printf("fonction move %d %d\n", x, y);
+            get_new_scene(game, x, y, 0);
+            ft_printf("CONGRATULATIONS! YOU WON");
+        }
         else
-            printf("GO UP, BACK or DOWN");
+            ft_printf("GO UP, BACK or DOWN");
     }
       
 }

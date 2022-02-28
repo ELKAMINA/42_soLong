@@ -84,4 +84,5 @@ int	keypress(int keycode, t_soLong *game)
 void playing(t_soLong *game)
 {
     mlx_hook(game->frame->win, 2, 1L<<0, keypress, game);
+    //mlx_hook(game->frame->win, 4, 1L<<2, quit_game, game);
 }

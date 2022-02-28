@@ -15,7 +15,11 @@ void move_r(t_soLong *game, int x, int y)
     else if (game->scene[y][x + 1] == 'E')
     {
         if (game->player->nb_of_coll == game->coll->total_nb)
+        {
             ft_printf("CONGRATULATIONS! YOU WON");
+            game->scene[y][x + 1] = 'P';
+            get_new_scene(game, x, y, 0);
+        }
         else
             ft_printf("GO UP, BACK or DOWN");
     }
@@ -52,7 +56,12 @@ void move_l(t_soLong *game, int x, int y)
     else if (game->scene[y][x - 1] == 'E')
     {
         if (game->player->nb_of_coll == game->coll->total_nb)
+        {
             ft_printf("CONGRATULATIONS! YOU WON");
+            game->scene[y][x - 1] = 'P';
+            //ft_printf("fonction move %d %d\n", x, y);
+            get_new_scene(game, x, y, 0);
+        }
         else
             ft_printf("GO UP, BACK or DOWN");
     }
