@@ -2,7 +2,7 @@
 
 int quit_game(t_soLong *game)
 {
-    write(1, "Goodbye!\n", 9);
+    write(1, "\nGoodbye!\n", 9);
     if (&(game->floor) != NULL)
         destroy_all_images(game);
     free(game->floor->img);
@@ -52,7 +52,7 @@ void    get_new_scene(t_soLong *game, int x, int y, int co)
 {
     game->scene[y][x] = '0';
     game->player->total_moves++;
-    ft_printf("\r -- %d ---", game->player->total_moves);
+    ft_printf("\r --- Total nb of moves = %d ---", game->player->total_moves);
     if (co == 1)
         game->player->nb_of_coll++;
     get_ze_game(game);
@@ -66,24 +66,17 @@ int	keypress(int keycode, t_soLong *game)
         quit_game(game);
     if (keycode == RIGHT || keycode == 100)
         moving_forward(game);
-    if (keycode == LEFT || keycode == 115)
+    if (keycode == LEFT || keycode == 97)
         moving_backward(game);
     if (keycode == UP || keycode == 119)
         moving_up(game);
-    if (keycode == DOWN || keycode == 97)
+    if (keycode == DOWN || keycode == 115)
         moving_down(game);
     return (1);
 }
-
-// int resize(t_soLong*game)
-// {
-//     ft_printf("%s\n", game->scene[0]);
-//     return (1);
-// }
 
 void playing(t_soLong *game)
 {
     mlx_hook(game->frame->win, 2, 1L<<0, keypress, game);
     mlx_hook(game->frame->win, 17, 1L << 17, quit_game, game);
-    //mlx_hook(game->frame->win, 25, 1L << 19, resize, game);
 }

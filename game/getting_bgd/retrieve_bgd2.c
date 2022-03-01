@@ -1,18 +1,22 @@
 #include "../../so_long.h"
 
-void init_decor(t_soLong *game)
+void	init_decor(t_soLong *game)
 {
-    ////ATTENTION, proteger joueurs en cas de changement de chemins dacces
-    game->player->img->img = mlx_xpm_file_to_image(game->frame->mlx, PLAYER, &(game->player->img->width), &(game->player->img->height));
-    game->wall->img->img = mlx_xpm_file_to_image(game->frame->mlx, WALL, &(game->wall->img->width), &(game->wall->img->height));
-    game->coll->img->img = mlx_xpm_file_to_image(game->frame->mlx, COLL, &(game->coll->img->width), &(game->coll->img->height));
-    game->exit->img->img = mlx_xpm_file_to_image(game->frame->mlx, EXIT, &game->exit->img->width, &game->exit->img->height);
-    game->floor->img->img = mlx_xpm_file_to_image(game->frame->mlx, FLOOR, &game->floor->img->width, &game->floor->img->height);
+	game->player->img->img = mlx_xpm_file_to_image(game->frame->mlx,
+		PLAYER, &(game->player->img->width), &(game->player->img->height));
+	game->wall->img->img = mlx_xpm_file_to_image(game->frame->mlx, 
+		WALL, &(game->wall->img->width), &(game->wall->img->height));
+	game->coll->img->img = mlx_xpm_file_to_image(game->frame->mlx,
+		COLL, &(game->coll->img->width), &(game->coll->img->height));
+	game->exit->img->img = mlx_xpm_file_to_image(game->frame->mlx,
+		EXIT, &game->exit->img->width, &game->exit->img->height);
+	game->floor->img->img = mlx_xpm_file_to_image(game->frame->mlx, 
+		FLOOR, &game->floor->img->width, &game->floor->img->height);
 }
 
-void put_images(t_soLong *game, void *img, int x, int y)
+void	put_images(t_soLong *game, void *img, int x, int y)
 {
-    mlx_put_image_to_window(game->frame->mlx, game->frame->win, img, (y * IMG_SIZE), (x * IMG_SIZE));    
+	mlx_put_image_to_window(game->frame->mlx, game->frame->win, img, (y * IMG_SIZE), (x * IMG_SIZE));
 
 }
 
