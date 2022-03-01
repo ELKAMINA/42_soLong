@@ -12,6 +12,7 @@ SRC =  main.c\
 		./checks/check_scene2.c \
 		./game/initialisations/initialisations.c \
 		./game/initialisations/initialisations2.c \
+		./game/initialisations/initialisations3.c \
 		./game/moving/moving_r_l.c \
 		./game/moving/moving_up.c \
 		./game/moving/moving_down.c \
