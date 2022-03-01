@@ -27,6 +27,7 @@
 # define WALL "images/wall.xpm"
 # define COLL "images/coll.xpm"
 # define EXIT "images/exit.xpm"
+# define END "images/end.xpm"
 # define PLAYER "images/player.xpm"
 # define PLAYERB "images/player_B.xpm"
 # define PLAYERR "images/player_R.xpm"
@@ -72,12 +73,14 @@ typedef struct s_frame
 typedef struct s_soLong
 {
 	char	**scene;
+	int		end_of_game;
 	t_frame *frame;
 	t_thing	*player;
 	t_thing	*wall;
 	t_thing	*floor;
 	t_thing	*coll;
 	t_thing	*exit;
+	t_thing	*end;
 }		   t_soLong;
 
 
@@ -119,6 +122,7 @@ void	init_coll(t_soLong *game);
 void	init_exit(t_soLong *game);
 void	init_wall(t_soLong *game);
 void	init_floor(t_soLong *game);
+void	init_end(t_soLong *game);
 void	init_struct_thing(t_soLong *game);
 void	init_struct_img(t_soLong *game);
 void	get_width_height(t_soLong *game);
@@ -142,6 +146,7 @@ char	**ft_split(char const *s, char c);
 //Cleaning when quiting game
 int		destroy_all_images(t_soLong *game);
 int		destroy_base(t_soLong *game);
+void    get_end_scene(t_soLong *game, int x, int y, int co);
 
 //Playing
 int 	quit_game(t_soLong *game);

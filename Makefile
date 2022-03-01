@@ -20,6 +20,7 @@ SRC =  main.c\
 		./game/getting_bgd/retrieve_bgd.c \
 		./game/getting_bgd/retrieve_bgd2.c \
 		./game/graphical_mngt/window_mngt.c \
+		./game/graphical_mngt/window_mngt2.c \
 		./gnl/get_next_line.c \
 		./gnl/get_next_line_utils.c \
 		./ft_printf/ft_printf.c \

@@ -31,10 +31,11 @@ void move_u(t_soLong *game, int x, int y)
     {
         if (game->player->nb_of_coll == game->coll->total_nb)
         {
-            ft_printf("CONGRATULATIONS! YOU WON");
+            // ft_printf("CONGRATULATIONS! YOU WON");
             game->scene[y - 1][x] = 'P';
+            game->end_of_game = 1;
             //printf("new string == %s, x == %d, y==%d\n", game->scene[1], x, y);
-            get_new_scene(game, x, y, 0);
+            get_end_scene(game, x, y, 0);
         }
         else
             ft_printf("GO UP, BACK or DOWN");

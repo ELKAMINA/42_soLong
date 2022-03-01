@@ -60,3 +60,15 @@ void	init_floor(t_soLong *game)
 	game->floor->img->height= 0;
 	game->floor->img->ratio= 0;
 }
+
+void	init_end(t_soLong *game)
+{
+	game->end->img->img = NULL;
+	game->end->img->addr = NULL;
+	game->end->img->bits_per_pixel = 0;
+	game->end->img->line_lenght = 0;
+	game->end->img->endian = 0;
+	game->end->img->width= 0;
+	game->end->img->height= 0;
+	game->end->img->ratio= 0;
+}
