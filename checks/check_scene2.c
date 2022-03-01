@@ -16,7 +16,7 @@ int   check_square(t_soLong *game)
             {
                 write (1, "Error\n", 7);
                 write (1, "It's not a rectangle\n", 22);
-                free(game->scene);
+                free_crash_init(game);
                 exit(0);
                 return (0);
             }
@@ -60,7 +60,7 @@ void check_first_last_line(t_soLong *game, char *lineOne)
         {
             write (1, "Error\n", 7);
             write (1, "First or Last Line is not a wall\n", 34);
-            free(game->scene);
+            free_crash_init(game);
             exit(0);
             return ;
         }
@@ -75,7 +75,7 @@ void check_intermediate_lines(t_soLong *game, char *lineOne)
     {
             write (1, "Error\n", 7);
             write (1, "There is no Wall\n", 18);
-            free(game->scene);
+            free_crash_init(game);
             exit(0);
             return ;
     }   

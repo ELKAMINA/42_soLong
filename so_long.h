@@ -112,6 +112,7 @@ void	check_intermediate_lines(t_soLong *game, char *lineOne);
 
 // Free when parsing 
 void	freeing(char    **game);
+void    free_crash_init(t_soLong *game);
 
 // Init everyhting and get decor
 void	init_struct_frame(t_soLong *game);
