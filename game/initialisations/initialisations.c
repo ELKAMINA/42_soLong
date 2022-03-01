@@ -21,10 +21,20 @@ void	init_struct_img(t_soLong *game)
 {
 	// A FREE
 	game->player->img = malloc(sizeof(t_img));
+	if (!game->player->img)
+		return ;
 	game->wall->img = malloc(sizeof(t_img));
+	if (!game->wall->img)
+		return ;
 	game->coll->img = malloc(sizeof(t_img));
+	if (!game->coll->img)
+		return ;
 	game->exit->img = malloc(sizeof(t_img));
+	if (!game->exit->img)
+		return ;
 	game->floor->img = malloc(sizeof(t_img));
+	if (!game->floor->img)
+		return ;
 	init_player(game);
 	init_wall(game);
 	init_coll(game);
@@ -37,10 +47,20 @@ void	init_struct_thing(t_soLong *game)
 {
 	// A FREE
 	game->player = malloc(sizeof(t_thing));
+	if (!game->player)
+		return ;
 	game->wall = malloc(sizeof(t_thing));
+	if (!game->wall)
+		return ;
 	game->coll = malloc(sizeof(t_thing));
+	if (!game->coll)
+		return ;
 	game->exit = malloc(sizeof(t_thing));
+	if (!game->exit)
+		return ;
 	game->floor = malloc(sizeof(t_thing));
+	if (!game->floor)
+		return ;
 	game->player->pos_x = 0;
 	game->player->pos_y = 0;
 	game->player->total_nb = 0;

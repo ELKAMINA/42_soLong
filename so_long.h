@@ -144,7 +144,7 @@ char	**ft_split(char const *s, char c);
 //Cleaning when quiting game
 int		destroy_all_images(t_soLong *game);
 int		destroy_base(t_soLong *game);
-void    get_end_scene(t_soLong *game, int x, int y, int co);
+void    get_end_scene(t_soLong *game, int x, int y);
 
 //Playing
 int 	quit_game(t_soLong *game);

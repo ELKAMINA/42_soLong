@@ -2,10 +2,8 @@
 
 int	destroy_base(t_soLong *game)
 {
-  printf("%p\n", game->floor->img->img);
 	if (game->floor->img->img != NULL)
 		mlx_destroy_image(game->frame->mlx, game->floor->img->img);
-	write(1, "kek\n", 4);
 	if (game->wall->img->img != NULL)
 		mlx_destroy_image(game->frame->mlx, game->wall->img->img);
 	if (game->exit->img->img != NULL)

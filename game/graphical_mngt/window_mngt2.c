@@ -1,6 +1,6 @@
 #include "../../so_long.h"
 
-void    get_end_scene(t_soLong *game, int x, int y, int co)
+void    get_end_scene(t_soLong *game, int x, int y)
 {
     game->scene[y][x] = '0';
     //get_pos(game);
@@ -9,7 +9,5 @@ void    get_end_scene(t_soLong *game, int x, int y, int co)
     //mlx_destroy_image(game->frame->mlx, game->player->img->img);
     //game->player->img->img = mlx_xpm_file_to_image(game->frame->mlx, PLAYERR, &(game->player->img->width), &(game->player->img->height));
     //mlx_put_image_to_window(game->frame->mlx, game->frame->win, game->player->img->img, game->player->pos_x, game->player->pos_y);
-    if (co == 1)
-        game->player->nb_of_coll++;
     quit_game(game);
 }

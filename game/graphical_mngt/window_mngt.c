@@ -20,7 +20,7 @@ int quit_game(t_soLong *game)
 	free(game->coll);
 	free(game->exit);
 	free(game->floor);
-    //cleafreeing(game->scene);
+    freeing(game->scene);
     exit(1);
     return (1);
 }
@@ -54,7 +54,7 @@ void    get_new_scene(t_soLong *game, int x, int y, int co)
     game->scene[y][x] = '0';
     game->player->total_moves++;
     ft_printf("\r -- %d ---", game->player->total_moves);
-    mlx_destroy_image(game->frame->mlx, game->player->img->img);
+    //mlx_destroy_image(game->frame->mlx, game->player->img->img);
     if (co == 1)
         game->player->nb_of_coll++;
     get_ze_game(game);

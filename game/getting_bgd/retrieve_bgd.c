@@ -26,7 +26,8 @@ void get_width_height(t_soLong *game)
 
 void    get_game_base(t_soLong *game)
 {
-// MALLOC STRUCT ???????   
+// MALLOC STRUCT ???????
+    init_decor(game);
     get_ze_game(game);
 
 }

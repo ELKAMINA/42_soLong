@@ -32,7 +32,7 @@ void move_d(t_soLong *game, int x, int y)
         if (game->player->nb_of_coll == game->coll->total_nb)
         {
             game->scene[y + 1][x] = 'P';
-            get_end_scene(game, x, y, 0);
+            get_end_scene(game, x, y);
         }
         else
             ft_printf("GO UP, BACK or DOWN");
