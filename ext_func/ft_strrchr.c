@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ael-khat <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/01 17:35:01 by ael-khat          #+#    #+#             */
+/*   Updated: 2022/03/01 17:35:11 by ael-khat         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../so_long.h"
 
 int	ft_strrchr(const char *s, int c)
@@ -8,7 +20,6 @@ int	ft_strrchr(const char *s, int c)
 	int				j;
 
 	sent = (char *)s;
-	//printf("%s\n", sent);
 	character = (unsigned char)c;
 	i = 0;
 	j = -1;

@@ -34,7 +34,6 @@ void get_pos(t_soLong *game)
     while (game->scene[i])
     {
         j = 0;
-        //ft_printf("%c\n", game->scene[i][j]);
         while (game->scene[i][j])
         {
             if (game->scene[i][j] == 'P')
@@ -54,7 +53,6 @@ void    get_new_scene(t_soLong *game, int x, int y, int co)
     game->scene[y][x] = '0';
     game->player->total_moves++;
     ft_printf("\r -- %d ---", game->player->total_moves);
-    //mlx_destroy_image(game->frame->mlx, game->player->img->img);
     if (co == 1)
         game->player->nb_of_coll++;
     get_ze_game(game);
