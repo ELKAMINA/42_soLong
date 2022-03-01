@@ -73,14 +73,12 @@ typedef struct s_frame
 typedef struct s_soLong
 {
 	char	**scene;
-	int		end_of_game;
 	t_frame *frame;
 	t_thing	*player;
 	t_thing	*wall;
 	t_thing	*floor;
 	t_thing	*coll;
 	t_thing	*exit;
-	t_thing	*end;
 }		   t_soLong;
 
 

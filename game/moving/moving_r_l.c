@@ -18,7 +18,6 @@ void move_r(t_soLong *game, int x, int y)
         {
             //ft_printf("CONGRATULATIONS! YOU WON \n");
             game->scene[y][x + 1] = 'P';
-            game->end_of_game = 1;
             get_end_scene(game, x, y, 0);
         }
         else
@@ -60,7 +59,6 @@ void move_l(t_soLong *game, int x, int y)
         {
             ft_printf("CONGRATULATIONS! YOU WON");
             game->scene[y][x - 1] = 'P';
-            game->end_of_game = 1;
             //ft_printf("fonction move %d %d\n", x, y);
             get_end_scene(game, x, y, 0);
         }

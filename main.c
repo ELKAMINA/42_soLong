@@ -9,14 +9,9 @@ int	main(int argc, char *argv[])
 	if (fd == 0)
 		return (0);
 	init_struct_game(&game, fd);
-	// init structs
-	//ft_printf("%s\n", game.scene[1]);
-	// Load game
 	verif_scene(&game);
+	//freeing(game.scene);
+	// Jusquici pas de Leaks
 	get_background(&game);
 	get_width_height(&game);
-
-
-	//freeing(game.scene);
-	//FREE FRAME AND IMAGE !!!!!!;
 }

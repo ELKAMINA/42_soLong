@@ -8,7 +8,6 @@ void init_decor(t_soLong *game)
     game->coll->img->img = mlx_xpm_file_to_image(game->frame->mlx, COLL, &(game->coll->img->width), &(game->coll->img->height));
     game->exit->img->img = mlx_xpm_file_to_image(game->frame->mlx, EXIT, &game->exit->img->width, &game->exit->img->height);
     game->floor->img->img = mlx_xpm_file_to_image(game->frame->mlx, FLOOR, &game->floor->img->width, &game->floor->img->height);
-    game->end->img->img = mlx_xpm_file_to_image(game->frame->mlx, END, &(game->end->img->width), &game->end->img->height);
 }
 
 void put_images(t_soLong *game, void *img, int x, int y)
@@ -29,8 +28,6 @@ void get_the_right_image(char c, t_soLong *game, int i, int j)
         put_images(game, game->coll->img->img, i, j);
     if (c == 'P')
         put_images(game, game->player->img->img, i, j);
-    if  (game->end_of_game == 1)
-        put_images(game, game->end->img->img, 80, 80);
 }
 
 void    get_ze_game(t_soLong *game)

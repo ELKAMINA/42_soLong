@@ -33,7 +33,6 @@ void move_u(t_soLong *game, int x, int y)
         {
             // ft_printf("CONGRATULATIONS! YOU WON");
             game->scene[y - 1][x] = 'P';
-            game->end_of_game = 1;
             //printf("new string == %s, x == %d, y==%d\n", game->scene[1], x, y);
             get_end_scene(game, x, y, 0);
         }

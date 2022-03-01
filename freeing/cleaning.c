@@ -14,10 +14,6 @@ int	destroy_base(t_soLong *game)
 		mlx_destroy_image(game->frame->mlx, game->player->img->img);
 	if (game->coll->img->img != NULL)
     	mlx_destroy_image(game->frame->mlx, game->coll->img->img);
-/*	free(game->floor->img);
-	free(game->player->img);
-	free(game->wall->img);
-	free(game->exit->img);*/
 	return (0);
 }
 
