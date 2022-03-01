@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_file.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ael-khat <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/01 21:25:39 by ael-khat          #+#    #+#             */
+/*   Updated: 2022/03/01 21:27:22 by ael-khat         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../so_long.h"
 
 int	check_file(char *argv)
 {
-	int				fd;
-	
+	int	fd;
+
 	fd = open(argv, O_RDWR);
 	if (fd == -1)
 	{
@@ -35,7 +47,7 @@ char	**get_stage(int fd)
 {
 	char			*buf;
 	char			**map;
-	static	char	*final;
+	static char		*final;
 
 	buf = get_next_line(fd);
 	while (buf)
@@ -44,11 +56,11 @@ char	**get_stage(int fd)
 		free(buf);
 		buf = get_next_line(fd);
 	}
-	if	(double_newline(final) == 1)
+	if (double_newline(final) == 1)
 	{
 		write(1, "Error\n", 7);
-        write(1, "Invalid map\n", 13);
-        free(final);
+		write(1, "Invalid map\n", 13);
+		free(final);
 		exit(0);
 	}
 	else
@@ -59,5 +71,3 @@ char	**get_stage(int fd)
 	}
 	return (map);
 }
-
-

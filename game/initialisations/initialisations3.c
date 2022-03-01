@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   initialisations3.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ael-khat <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/01 21:18:40 by ael-khat          #+#    #+#             */
+/*   Updated: 2022/03/01 21:18:59 by ael-khat         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../so_long.h"
 
 void	init_thing_player(t_soLong *game)
@@ -35,7 +47,6 @@ void	init_thing_exit(t_soLong *game)
 	game->exit->total_moves = 0;
 	game->exit->nb_of_coll = 0;
 }
-
 
 void	init_thing_wall(t_soLong *game)
 {

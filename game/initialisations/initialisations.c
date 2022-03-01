@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   initialisations.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ael-khat <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/01 21:16:26 by ael-khat          #+#    #+#             */
+/*   Updated: 2022/03/01 21:16:32 by ael-khat         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../so_long.h"
 
 void	init_struct_game(t_soLong *game, int fd)
@@ -9,7 +21,6 @@ void	init_struct_game(t_soLong *game, int fd)
 
 void	init_struct_frame(t_soLong *game)
 {
-	// A FREE
 	game->frame = malloc(sizeof(t_frame));
 	game->frame->mlx = 0;
 	game->frame->win = 0;
@@ -19,7 +30,6 @@ void	init_struct_frame(t_soLong *game)
 
 void	init_struct_img(t_soLong *game)
 {
-	// A FREE
 	game->player->img = malloc(sizeof(t_img));
 	if (!game->player->img)
 		return ;
@@ -42,10 +52,8 @@ void	init_struct_img(t_soLong *game)
 	init_floor(game);
 }
 
-
 void	init_struct_thing(t_soLong *game)
 {
-	// A FREE
 	game->player = malloc(sizeof(t_thing));
 	if (!game->player)
 		return ;
