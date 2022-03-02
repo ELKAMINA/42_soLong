@@ -6,7 +6,7 @@
 /*   By: ael-khat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/26 11:48:49 by ael-khat          #+#    #+#             */
-/*   Updated: 2022/03/01 21:47:41 by ael-khat         ###   ########.fr       */
+/*   Updated: 2022/03/02 18:10:50 by ael-khat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,6 @@
 # define EXIT "images/exit.xpm"
 # define END "images/end.xpm"
 # define PLAYER "images/player.xpm"
-# define PLAYERB "images/player_B.xpm"
-# define PLAYERR "images/player_R.xpm"
-# define PLAYERL "images/player_L.xpm"
 
 # define IMG_SIZE	80
 
@@ -119,6 +116,7 @@ void	get_game_base(t_soLong *game);
 void	init_decor(t_soLong *game);
 void	put_images(t_soLong *game, void *img, int x, int y);
 void	get_the_right_image(char c, t_soLong *game, int i, int j);
+void	check_validity_bis(t_soLong *game);
 void	get_ze_game(t_soLong *game);
 void	playing(t_soLong *game);
 int		keypress(int keycode, t_soLong *game);
@@ -129,7 +127,7 @@ int		destroy_all_images(t_soLong *game);
 int		destroy_base(t_soLong *game);
 int		quit_game(t_soLong *game);
 void	init_struct_pos(t_soLong *game);
-void 	exit_return();
+void	exit_return(void);
 void	get_pos(t_soLong *game);
 void	move_r(t_soLong *game, int x, int y);
 void	move_l(t_soLong *game, int x, int y);

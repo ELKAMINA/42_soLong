@@ -36,6 +36,7 @@ void	count_initials(t_soLong *game)
 		i++;
 	}
 	check_validity(game);
+	check_validity_bis(game);
 	check_walls(game);
 }
 

@@ -6,7 +6,7 @@
 /*   By: ael-khat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 21:36:47 by ael-khat          #+#    #+#             */
-/*   Updated: 2022/03/01 21:36:49 by ael-khat         ###   ########.fr       */
+/*   Updated: 2022/03/02 18:05:06 by ael-khat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,8 @@ void	free_crash_init(t_soLong *game)
 	freeing(game->scene);
 }
 
-void exit_return()
+void	exit_return(void)
 {
 	exit (0);
 	return ;
 }
-

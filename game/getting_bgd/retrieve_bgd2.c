@@ -6,18 +6,16 @@
 /*   By: ael-khat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 18:05:20 by ael-khat          #+#    #+#             */
-/*   Updated: 2022/03/01 18:07:59 by ael-khat         ###   ########.fr       */
+/*   Updated: 2022/03/02 18:06:25 by ael-khat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../so_long.h"
 
-int load_img_fail(t_soLong *game)
+int	load_img_fail(t_soLong *game)
 {
-	//(void)game;
 	write (1, "Img cannot load\n", 17);
 	quit_game(game);
-	//free_crash_init(game);
 	exit (0);
 	return (0);
 }

@@ -12,6 +12,18 @@
 
 #include "../so_long.h"
 
+void	check_validity_bis(t_soLong *game)
+{
+	if (game->player->total_nb > 1)
+	{
+		write(1, "Error\n", 7);
+		write(1, "Only one player\n", 17);
+		free_crash_init(game);
+		exit(0);
+		return ;
+	}
+}
+
 int	check_square(t_soLong *game)
 {
 	int	i;

@@ -6,7 +6,7 @@
 /*   By: ael-khat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 18:07:21 by ael-khat          #+#    #+#             */
-/*   Updated: 2022/03/01 18:08:15 by ael-khat         ###   ########.fr       */
+/*   Updated: 2022/03/02 18:07:08 by ael-khat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	get_width_height(t_soLong *game)
 int	get_mlx_win(t_soLong *game)
 {
 	game->frame->mlx = mlx_init();
-	if (game->frame->mlx ==  NULL)
+	if (game->frame->mlx == NULL)
 	{
 		write(1, "Error\n", 7);
 		write(1, "Failed to init MLX\n", 20);
@@ -51,6 +51,3 @@ void	get_background(t_soLong *game)
 	get_mlx_win(game);
 	get_game_base(game);
 }
-
-
-
