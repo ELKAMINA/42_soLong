@@ -32,7 +32,10 @@ void	move_r(t_soLong *game, int x, int y)
 			get_end_scene(game, x, y);
 		}
 		else
-			ft_printf("\nGO UP, BACK or DOWN\n");
+		{
+			game->scene[y][x + 1] = 'P';
+			get_interm_scene(game, x, y, 0);
+		}
 	}
 }
 
@@ -67,7 +70,10 @@ void	move_l(t_soLong *game, int x, int y)
 			get_end_scene(game, x, y);
 		}
 		else
-			ft_printf("\nGO UP, BACK or DOWN\n");
+		{
+			game->scene[y][x - 1] = 'P';
+			get_interm_scene(game, x, y, 0);
+		}
 	}
 }
 

@@ -43,6 +43,9 @@ void	move_d(t_soLong *game, int x, int y)
 			get_end_scene(game, x, y);
 		}
 		else
-			ft_printf("\nGO UP, BACK or DOWN\n");
+		{
+			game->scene[y + 1][x] = 'P';
+			get_interm_scene(game, x, y, 0);
+		}
 	}
 }

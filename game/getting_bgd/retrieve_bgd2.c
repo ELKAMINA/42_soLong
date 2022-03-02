@@ -12,18 +12,35 @@
 
 #include "../../so_long.h"
 
+int load_img_fail(void)
+{
+	write (1, "Img cannot load\n", 17);
+	exit (0);
+	return (0);
+}
+
 void	init_decor(t_soLong *game)
 {
 	game->player->img->img = mlx_xpm_file_to_image(game->frame->mlx,
 			PLAYER, &(game->player->img->width), &(game->player->img->height));
+	if (!game->player->img->img)
+		load_img_fail();
 	game->wall->img->img = mlx_xpm_file_to_image(game->frame->mlx,
 			WALL, &(game->wall->img->width), &(game->wall->img->height));
+	if (!game->wall->img->img)
+		load_img_fail();
 	game->coll->img->img = mlx_xpm_file_to_image(game->frame->mlx,
 			COLL, &(game->coll->img->width), &(game->coll->img->height));
+	if (!game->coll->img->img)
+		load_img_fail();
 	game->exit->img->img = mlx_xpm_file_to_image(game->frame->mlx,
 			EXIT, &game->exit->img->width, &game->exit->img->height);
+	if (!game->exit->img->img)
+		load_img_fail();
 	game->floor->img->img = mlx_xpm_file_to_image(game->frame->mlx,
 			FLOOR, &game->floor->img->width, &game->floor->img->height);
+	if (!game->floor->img->img)
+		load_img_fail();
 }
 
 void	put_images(t_soLong *game, void *img, int x, int y)

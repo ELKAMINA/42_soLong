@@ -17,7 +17,7 @@ int	check_create(int argc, char *argv[])
 	if (argc != 2)
 	{
 		write(1, "Error\n", 7);
-		write(1, "Error in ARGS\n", 15);
+		write(1, "Wrong number of Args\n", 22);
 		return (0);
 	}
 	else
@@ -33,7 +33,8 @@ int	check_name_arg(char *argv[])
 		|| argv[1][ft_strrchr(argv[1], '.') - 1] == '\0' ||
 			argv[1][ft_strrchr(argv[1], '.') - 1] == '/')
 	{
-		write(1, "Error in args \n", 15);
+		write(1, "Error\n", 7);
+		write(1, "Wrong format in args\n", 22);
 		return (0);
 	}
 	else
