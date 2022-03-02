@@ -32,19 +32,19 @@ void	init_struct_img(t_soLong *game)
 {
 	game->player->img = malloc(sizeof(t_img));
 	if (!game->player->img)
-		return ;
+		exit_return();
 	game->wall->img = malloc(sizeof(t_img));
 	if (!game->wall->img)
-		return ;
+		exit_return();
 	game->coll->img = malloc(sizeof(t_img));
 	if (!game->coll->img)
-		return ;
+		exit_return();
 	game->exit->img = malloc(sizeof(t_img));
 	if (!game->exit->img)
-		return ;
+		exit_return();
 	game->floor->img = malloc(sizeof(t_img));
 	if (!game->floor->img)
-		return ;
+		exit_return();
 	init_player(game);
 	init_wall(game);
 	init_coll(game);

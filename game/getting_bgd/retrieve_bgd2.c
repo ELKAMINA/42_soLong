@@ -12,9 +12,12 @@
 
 #include "../../so_long.h"
 
-int load_img_fail(void)
+int load_img_fail(t_soLong *game)
 {
+	//(void)game;
 	write (1, "Img cannot load\n", 17);
+	quit_game(game);
+	//free_crash_init(game);
 	exit (0);
 	return (0);
 }
@@ -23,24 +26,24 @@ void	init_decor(t_soLong *game)
 {
 	game->player->img->img = mlx_xpm_file_to_image(game->frame->mlx,
 			PLAYER, &(game->player->img->width), &(game->player->img->height));
-	if (!game->player->img->img)
-		load_img_fail();
+	if (!(game->player->img->img))
+		load_img_fail(game);
 	game->wall->img->img = mlx_xpm_file_to_image(game->frame->mlx,
 			WALL, &(game->wall->img->width), &(game->wall->img->height));
 	if (!game->wall->img->img)
-		load_img_fail();
+		load_img_fail(game);
 	game->coll->img->img = mlx_xpm_file_to_image(game->frame->mlx,
 			COLL, &(game->coll->img->width), &(game->coll->img->height));
 	if (!game->coll->img->img)
-		load_img_fail();
+		load_img_fail(game);
 	game->exit->img->img = mlx_xpm_file_to_image(game->frame->mlx,
 			EXIT, &game->exit->img->width, &game->exit->img->height);
 	if (!game->exit->img->img)
-		load_img_fail();
+		load_img_fail(game);
 	game->floor->img->img = mlx_xpm_file_to_image(game->frame->mlx,
 			FLOOR, &game->floor->img->width, &game->floor->img->height);
 	if (!game->floor->img->img)
-		load_img_fail();
+		load_img_fail(game);
 }
 
 void	put_images(t_soLong *game, void *img, int x, int y)

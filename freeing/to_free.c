@@ -36,10 +36,17 @@ void	free_crash_init(t_soLong *game)
 	free(game->coll->img);
 	free(game->frame->mlx);
 	free(game->frame);
-	free(game->player);
-	free(game->wall);
-	free(game->coll);
-	free(game->exit);
 	free(game->floor);
+	free(game->wall);
+	free(game->player);
+	free(game->exit);
+	free(game->coll);
 	freeing(game->scene);
 }
+
+void exit_return()
+{
+	exit (0);
+	return ;
+}
+

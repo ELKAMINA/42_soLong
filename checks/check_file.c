@@ -30,23 +30,23 @@ int	check_file(char *argv)
 int	check_images(void)
 {
 	int	fd_o;
-	int	fd_t;
+	int	fd_two;
 	int	fd_th;
 	int	fd_fo;
 	int	fd_fiv;
 
 	fd_o = open(COLL, O_RDONLY);
-	fd_t = open(EXIT, O_RDONLY);
+	fd_two = open(EXIT, O_RDONLY);
 	fd_th = open(PLAYER, O_RDONLY);
 	fd_fo = open(FLOOR, O_RDONLY);
 	fd_fiv = open(WALL, O_RDONLY);
-	if (fd_o < 0 || fd_t < 0 || fd_th < 0 || fd_fo < 0 || fd_fiv < 0)
+	if (fd_o < 0 || fd_two < 0 || fd_th < 0 || fd_fo < 0 || fd_fiv < 0)
 	{
 		write(1, "Error\nInvalid img\n", 19);
 		return (1);
 	}
 	close(fd_o);
-	close(fd_t);
+	close(fd_two);
 	close(fd_th);
 	close(fd_fo);
 	close(fd_fiv);

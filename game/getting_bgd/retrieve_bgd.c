@@ -12,28 +12,6 @@
 
 #include "../../so_long.h"
 
-void	get_background(t_soLong *game)
-{
-	get_mlx_win(game);
-	get_game_base(game);
-}
-
-int	get_mlx_win(t_soLong *game)
-{
-	game->frame->mlx = mlx_init();
-	if (!game->frame->mlx)
-	{
-		write(1, "Error\n", 7);
-		write(1, "Failed to init MLX\n", 20);
-		exit (0);
-		return (0);
-	}
-	get_width_height(game);
-	game->frame->win = mlx_new_window(game->frame->mlx, game->frame->win_w,
-			game->frame->win_h, "42 Wimbledon");
-	return (1);
-}
-
 void	get_width_height(t_soLong *game)
 {
 	int	wi_g;
@@ -45,8 +23,34 @@ void	get_width_height(t_soLong *game)
 	game->frame->win_h = hei_g * IMG_SIZE;
 }
 
+int	get_mlx_win(t_soLong *game)
+{
+	game->frame->mlx = mlx_init();
+	if (game->frame->mlx ==  NULL)
+	{
+		write(1, "Error\n", 7);
+		write(1, "Failed to init MLX\n", 20);
+		free_crash_init(game);
+		exit (0);
+		return (0);
+	}
+	get_width_height(game);
+	game->frame->win = mlx_new_window(game->frame->mlx, game->frame->win_w,
+			game->frame->win_h, "42 Wimbledon");
+	return (1);
+}
+
 void	get_game_base(t_soLong *game)
 {
 	init_decor(game);
 	get_ze_game(game);
 }
+
+void	get_background(t_soLong *game)
+{
+	get_mlx_win(game);
+	get_game_base(game);
+}
+
+
+
