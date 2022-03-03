@@ -6,10 +6,13 @@ SRC =  main.c\
 		./ext_func/ft_strrchr.c \
 		./ext_func/ft_strnstr.c \
 		./ext_func/ft_split.c \
+		./ext_func/ft_strncmp.c \
 		./checks/check_file.c \
+		./checks/check_file2.c \
 		./checks/check_params.c \
 		./checks/check_scene.c \
 		./checks/check_scene2.c \
+		./checks/check_scene3.c \
 		./game/initialisations/initialisations.c \
 		./game/initialisations/initialisations2.c \
 		./game/initialisations/initialisations3.c \

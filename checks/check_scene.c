@@ -6,15 +6,17 @@
 /*   By: ael-khat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 21:30:52 by ael-khat          #+#    #+#             */
-/*   Updated: 2022/03/01 21:31:29 by ael-khat         ###   ########.fr       */
+/*   Updated: 2022/03/03 16:12:25 by ael-khat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-void	verif_scene(t_soLong *game)
+void	checks(t_soLong *game)
 {
-	count_initials(game);
+	check_validity(game);
+	check_validity_bis(game);
+	check_walls(game);
 }
 
 void	count_initials(t_soLong *game)
@@ -30,14 +32,17 @@ void	count_initials(t_soLong *game)
 		j = 0;
 		while (game_c->scene[i][j])
 		{
+			if (game_c->scene[i][j] != '1' && game_c->scene[i][j] != 'C'
+				&& game_c->scene[i][j] != 'P' && game_c->scene[i][j] != '0'
+					&& game_c->scene[i][j] != 'E'
+						&& game_c->scene[i][j] != '\n')
+				invalid_char_inmap(game);
 			increment(game_c, game_c->scene[i][j]);
 			j++;
 		}
 		i++;
 	}
-	check_validity(game);
-	check_validity_bis(game);
-	check_walls(game);
+	checks(game);
 }
 
 void	increment(t_soLong *game, char c)

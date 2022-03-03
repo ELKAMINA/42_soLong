@@ -6,7 +6,7 @@
 /*   By: ael-khat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 21:33:34 by ael-khat          #+#    #+#             */
-/*   Updated: 2022/03/01 21:34:16 by ael-khat         ###   ########.fr       */
+/*   Updated: 2022/03/03 15:35:16 by ael-khat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,14 +60,17 @@ void	check_fence(t_soLong *game)
 	i = 1;
 	j = 1;
 	nb_lines = check_square(game);
-	check_first_last_line(game, game->scene[0]);
-	while (i != nb_lines - 1 && j != nb_lines - 1)
+	if (nb_lines != 0)
 	{
-		check_intermediate_lines(game, game->scene[j]);
-		i++;
-		j++;
+		check_first_last_line(game, game->scene[0]);
+		while (i != nb_lines - 1 && j != nb_lines - 1)
+		{
+			check_intermediate_lines(game, game->scene[j]);
+			i++;
+			j++;
+		}
+		check_first_last_line(game, game->scene[nb_lines - 1]);
 	}
-	check_first_last_line(game, game->scene[nb_lines - 1]);
 	return ;
 }
 

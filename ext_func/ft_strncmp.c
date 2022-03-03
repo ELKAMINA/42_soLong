@@ -1,40 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_params.c                                     :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ael-khat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/01 21:28:11 by ael-khat          #+#    #+#             */
-/*   Updated: 2022/03/01 21:29:08 by ael-khat         ###   ########.fr       */
+/*   Created: 2022/03/03 14:23:04 by ael-khat          #+#    #+#             */
+/*   Updated: 2022/03/03 14:23:07 by ael-khat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-int	check_create(int argc, char *argv[])
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	if (argc != 2)
-	{
-		write(1, "Error\n", 7);
-		write(1, "Wrong number of Args\n", 22);
-		return (0);
-	}
-	else
-		return (check_name_arg(argv));
-}
+	size_t			i;
+	unsigned char	*str1;
+	unsigned char	*str2;
 
-int	check_name_arg(char *argv[])
-{
-	size_t	len;
-
-	len = ft_strlen(argv[1]) - 4;
-	if (ft_strncmp(&argv[1][len], ".ber", 4) == 0)
-		return (check_file(argv[1]));
-	else
+	i = 0;
+	str1 = (unsigned char *)s1;
+	str2 = (unsigned char *)s2;
+	while ((str1[i] || str2[i]) && i < n)
 	{
-		write(1, "Error\n", 7);
-		write(1, "Wrong format in args\n", 22);
-		return (0);
+		if (str1[i] != str2[i])
+			return (str1[i] - str2[i]);
+		i ++;
 	}
+	return (0);
 }
